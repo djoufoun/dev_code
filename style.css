@@ -1,0 +1,9 @@
+p{
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(168, 84, 185);
+}
+
+p span{
+    color: rgb(34, 71, 171);
+}
