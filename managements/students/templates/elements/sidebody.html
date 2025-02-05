@@ -1,0 +1,492 @@
+<style>
+    a{
+        text-decoration: none;
+    }
+    .panel-card{
+        margin-bottom: 10px !important;
+        border-radius: 4px;
+        box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+        position: relative;
+        overflow: hidden;
+        height: 110px;
+    }
+    .panel-card-header{
+        padding: 10px;
+        position: relative;
+        font-family: "Montserrat";
+        width: 100%;
+        cursor: pointer;
+        transition: all 0.6s ease-in-out;
+    }
+    .panel-card-header:hover{
+        transform: translateY(10px);
+        transition: all 0.6s ease-in-out;
+        box-shadow: rgb(31, 29, 29);
+    }
+  .panel-card-footer{
+    position: relative;
+    top: -8px;
+  }
+    .huge{
+        font-size: 30px !important;
+        line-height: normal I !important;
+        font-weight: 900;
+        font-family: "Popins" !important;
+    }
+    .users{
+        font-size: 20px;
+    }
+    .iconne{
+        transform: rotate(-15deg);
+        opacity: 0.6;
+        transition:  0.6s ease-in-out;
+       
+    }
+    .iconne:hover{
+        transform: translateY(10px);
+        
+    }
+    .colape{
+        margin-left: 25px;
+    }
+ 
+    .mt-0-7{
+        position: absolute;
+        right: -140px;
+    }
+    .bx-trending-up{
+        position: absolute;
+        top: 0;
+    }
+    .header-initial{
+        position: relative;
+        width: 100%;
+        
+    }
+
+</style>
+
+        <div class="panel-card bg-primary">
+            <div class="panel-card-header bg-primary-2 text-white">
+                <div  class="row d-flex justify-content-center contenir">
+                    <div class="colape">
+                        <div class="huge">
+                            <span class="badge rounded-pill bg-info">{{student_count}}</span>
+                        </div>
+                        <div class="users">ETUDIANTS</div>
+                    </div>
+                    <div class="col text-right mt-0-7">
+                        <i class="fas fa-graduation-cap fa-4x text-white icon iconne"></i>
+                        <i class='bx bx-trending-up icon' ></i>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-card-footer bg-primary-dark cl-white text-center">
+                <a href="{% url 'students:student' %}">
+                    <span>View details</span>
+                    <span><i class="fas fa-arrow-circle-right"></i> </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="panel-card bg-success">
+            <div class="panel-card-header bg-primary-2 text-white">
+                <div  class="row d-flex justify-content-center contenir">
+                    <div class="colape">
+                        <div class="huge">
+                            <span class="badge rounded-pill bg-dark">{{annee}}</span>
+                        </div>
+                        <div class="users">ANNEE SCOLAIRE</div>
+                    </div>
+                    <div class="col text-right mt-0-7">
+                        <i class="fas fa-users fa-4x text-white icon iconne"></i>
+                        <i class='bx bx-trending-up icon' ></i>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-card-footer bg-primary-dark cl-white text-center">
+                <a href="{% url 'students:anneescolaire' %}">
+                    <span>View details</span>
+                    <span><i class="fas fa-arrow-circle-right"></i> </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="panel-card bg-warning">
+            <div class="panel-card-header bg-primary-2 text-white">
+                <div  class="row d-flex justify-content-center contenir">
+                    <div class="colape">
+                        <div class="huge">
+                            <span class="badge rounded-pill bg-info">{{dawm}}</span>
+                        </div>
+                        <div class="users">D.A.W.M</div>
+                    </div>
+                    <div class="col text-right mt-0-7">
+                        <i class="fas fa-users fa-4x text-white icon iconne"></i>
+                        <i class='bx bx-trending-up icon' ></i>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-card-footer bg-primary-dark cl-white text-center">
+                <a href="{% url 'students:student' %}">
+                    <span>View details</span>
+                    <span><i class="fas fa-arrow-circle-right"></i> </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="panel-card bg-info">
+            <div class="panel-card-header bg-primary-2 text-white">
+                <div  class="row d-flex justify-content-center contenir">
+                    <div class="colape">
+                        <div class="huge">
+                            <span class="badge rounded-pill bg-dark">{{asrs}}</span>
+                        </div>
+                        <div class="users">A.S.R.S</div>
+                    </div>
+                    <div class="col text-right mt-0-7">
+                        <i class="fas fa-users fa-4x text-white icon iconne"></i>
+                        <i class='bx bx-trending-up icon' ></i>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-card-footer bg-primary-dark cl-white text-center">
+                <a href="{% url 'students:student' %}">
+                    <span>View details</span>
+                    <span><i class="fas fa-arrow-circle-right"></i> </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="panel-card bg-secondary">
+            <div class="panel-card-header bg-primary-2 text-white">
+                <div  class="row d-flex justify-content-center contenir">
+                    <div class="colape">
+                        <div class="huge">
+                            <span class="badge rounded-pill bg-primary">{{tuteur}}</span>
+                        </div>
+                        <div class="users">TUTEURS</div>
+                    </div>
+                    <div class="col text-right mt-0-7">
+                        <i class="fas fa-user fa-4x text-white icon iconne"></i>
+                        <i class='bx bx-trending-up icon' ></i>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-card-footer bg-primary-dark cl-white text-center">
+                <a href="{% url 'students:tuteur' %}">
+                    <span>View details</span>
+                    <span><i class="fas fa-arrow-circle-right"></i> </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="panel-card bg-info">
+            <div class="panel-card-header bg-primary-2 text-white">
+                <div  class="row d-flex justify-content-center contenir">
+                    <div class="colape">
+                        <div class="huge">
+                            <span class="badge rounded-pill bg-dark">{{departement}}</span>
+                        </div>
+                        <div class="users">DEPARTEMENTS</div>
+                    </div>
+                    <div class="col text-right mt-0-7">
+                        <i class="fas fa-user fa-4x text-white icon iconne"></i>
+                        <i class='bx bx-trending-up icon' ></i>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-card-footer bg-primary-dark cl-white text-center">
+                <a href="{% url 'students:departement' %}">
+                    <span>View details</span>
+                    <span><i class="fas fa-arrow-circle-right"></i> </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="panel-card bg-info">
+            <div class="panel-card-header bg-primary-2 text-white">
+                <div  class="row d-flex justify-content-center contenir">
+                    <div class="colape">
+                        <div class="huge">
+                            <span class="badge rounded-pill bg-dark">{{filiere}}</span>
+                        </div>
+                        <div class="users">FILIERES</div>
+                    </div>
+                    <div class="col text-right mt-0-7">
+                        <i class="fas fa-user fa-4x text-white icon iconne"></i>
+                        <i class='bx bx-trending-up icon' ></i>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-card-footer bg-primary-dark cl-white text-center">
+                <a href="{% url 'students:addfiliere' %}">
+                    <span>View details</span>
+                    <span><i class="fas fa-arrow-circle-right"></i> </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="panel-card bg-info">
+            <div class="panel-card-header bg-primary-2 text-white">
+                <div  class="row d-flex justify-content-center contenir">
+                    <div class="colape">
+                        <div class="huge">
+                            <span class="badge rounded-pill bg-dark">{{matiere}}</span>
+                        </div>
+                        <div class="users">MATIERES</div>
+                    </div>
+                    <div class="col text-right mt-0-7">
+                        <i class="fas fa-user fa-4x text-white icon iconne"></i>
+                        <i class='bx bx-trending-up icon' ></i>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-card-footer bg-primary-dark cl-white text-center">
+                <a href="{% url 'students:addmatiere' %}">
+                    <span>View details</span>
+                    <span><i class="fas fa-arrow-circle-right"></i> </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="panel-card bg-info">
+            <div class="panel-card-header bg-primary-2 text-white">
+                <div  class="row d-flex justify-content-center contenir">
+                    <div class="colape">
+                        <div class="huge">
+                            <span class="badge bg-danger rounded-pill">{{enseignant}}</span>
+                        </div>
+                        <div class="users">ENSEIGNANTS</div>
+                    </div>
+                    <div class="col text-right mt-0-7">
+                        <i class="fas fa-user fa-4x text-white icon iconne"></i>
+                        <i class='bx bx-trending-up icon' ></i>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-card-footer bg-primary-dark cl-white text-center">
+                <a href="{% url 'students:teacherAdd' %}">
+                    <span>View details</span>
+                    <span><i class="fas fa-arrow-circle-right"></i> </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="panel-card bg-info">
+            <div class="panel-card-header bg-primary-2 text-white">
+                <div  class="row d-flex justify-content-center contenir">
+                    <div class="colape">
+                        <div class="huge">
+                            <span class="badge rounded-pill bg-danger">{{niveau}}</span>
+                        </div>
+                        <div class="users">NIVEAUX</div>
+                    </div>
+                    <div class="col text-right mt-0-7">
+                        <i class="fas fa-user fa-4x text-white icon iconne"></i>
+                        <i class='bx bx-trending-up icon' ></i>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-card-footer bg-primary-dark cl-white text-center">
+                <a href="{% url 'students:niveau' %}">
+                    <span>View details</span>
+                    <span><i class="fas fa-arrow-circle-right"></i> </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="panel-card bg-secondary">
+            <div class="panel-card-header bg-primary-2 text-white">
+                <div  class="row d-flex justify-content-center contenir">
+                    <div class="colape">
+                        <div class="huge">
+                            <span class="badge rounded-pill bg-info">{{semestre}}</span>
+                        </div>
+                        <div class="users">SEMESTRES</div>
+                    </div>
+                    <div class="col text-right mt-0-7">
+                        <i class="fas fa-user fa-4x text-white icon iconne"></i>
+                        <i class='bx bx-trending-up icon' ></i>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-card-footer bg-primary-dark cl-white text-center">
+                <a href="{% url 'students:semestre' %}">
+                    <span>View details</span>
+                    <span><i class="fas fa-arrow-circle-right"></i> </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="panel-card bg-secondary">
+            <div class="panel-card-header bg-primary-2 text-white">
+                <div  class="row d-flex justify-content-center contenir">
+                    <div class="colape">
+                        <div class="huge">
+                            <span class="badge rounded-pill bg-info">{{specialite}}</span>
+                        </div>
+                        <div class="users">SPECIALITES</div>
+                    </div>
+                    <div class="col text-right mt-0-7">
+                        <i class="fas fa-user fa-4x text-white icon iconne"></i>
+                        <i class='bx bx-trending-up icon' ></i>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-card-footer bg-primary-dark cl-white text-center">
+                <a href="{% url 'students:specialite' %}">
+                    <span>View details</span>
+                    <span><i class="fas fa-arrow-circle-right"></i> </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="panel-card bg-secondary">
+            <div class="panel-card-header bg-primary-2 text-white">
+                <div  class="row d-flex justify-content-center contenir">
+                    <div class="colape">
+                        <div class="huge">
+                            <span class="badge rounded-pill bg-info">{{classe}}</span>
+                      
+                        </div>
+                        <div class="users">CLASSES</div>
+                    </div>
+                    <div class="col text-right mt-0-7">
+                        <i class="fas fa-user fa-4x text-white icon iconne"></i>
+                        <i class='bx bx-trending-up icon' ></i>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-card-footer bg-primary-dark cl-white text-center">
+                <a href="{% url 'students:addclasse' %}">
+                    <span>View details</span>
+                    <span><i class="fas fa-arrow-circle-right"></i> </span>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="panel-card bg-secondary">
+            <div class="panel-card-header bg-primary-2 text-white">
+                <div  class="row d-flex justify-content-center contenir">
+                    <div class="colape">
+                        <div class="huge">
+                            550
+                        </div>
+                        <div class="users">EXAMENS</div>
+                    </div>
+                    <div class="col text-right mt-0-7">
+                        <i class="fas fa-user fa-4x text-white icon iconne"></i>
+                        <i class='bx bx-trending-up icon' ></i>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-card-footer bg-primary-dark cl-white text-center">
+                <a href="">
+                    <span>View details</span>
+                    <span><i class="fas fa-arrow-circle-right"></i> </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="panel-card bg-secondary">
+            <div class="panel-card-header bg-primary-2 text-white">
+                <div  class="row d-flex justify-content-center contenir">
+                    <div class="colape">
+                        <div class="huge">
+                            550
+                        </div>
+                        <div class="users">AJOUTER NOTES</div>
+                    </div>
+                    <div class="col text-right mt-0-7">
+                        <i class="fas fa-user fa-4x text-white icon iconne"></i>
+                        <i class='bx bx-trending-up icon' ></i>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-card-footer bg-primary-dark cl-white text-center">
+                <a href="">
+                    <span>View details</span>
+                    <span><i class="fas fa-arrow-circle-right"></i> </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="panel-card bg-secondary">
+            <div class="panel-card-header bg-primary-2 text-white">
+                <div  class="row d-flex justify-content-center contenir">
+                    <div class="colape">
+                        <div class="huge">
+                            550
+                        </div>
+                        <div class="users">EMPLOI DU TEMPS</div>
+                    </div>
+                    <div class="col text-right mt-0-7">
+                        <i class="fas fa-user fa-4x text-white icon iconne"></i>
+                        <i class='bx bx-trending-up icon' ></i>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-card-footer bg-primary-dark cl-white text-center">
+                <a href="">
+                    <span>View details</span>
+                    <span><i class="fas fa-arrow-circle-right"></i> </span>
+                </a>
+            </div>
+        </div>
+ 
+           <!-- <div class="tag">
+                <a href="{% url 'students:anneescolaire' %}">
+                    <div class="head">
+                        <div class="loop bg-primary">
+                            <i class='fa fa-solid fa-user-graduate icon' ></i>
+                        </div>
+                        <div class="loup">
+                            <h2>1500</h2>
+                            <p>AN.Scolaire</p>
+                        </div>
+                        <i class='bx bx-trending-up icon' ></i>
+                    </div>
+                </a>
+            </div>
+
+        
+            
+            <div class="tag">
+                <a href="{% url 'students:addmatiere' %}">
+                    <div class="head">
+                        <div class="loop bg-secondary">
+                            <i class='fa fa-users icon' ></i>
+                        </div>
+                        <div class="loup">
+                            <h2>465</h2>
+                            <p>PARENTS</p>
+                        </div>
+                        <i class='bx bx-trending-up icon' ></i>
+                    </div>
+                </a>
+            </div>
+            <div class="tag">
+                <a href="{% url 'students:addmatiere' %}">
+                    <div class="head">
+                        <div class="loop bg-dark">
+                            <i class='fa fa-users icon' ></i>
+                        </div>
+                        <div class="loup">
+                            <h2>465</h2>
+                            <p>A.S.R.S</p>
+                        </div>
+                        <i class='bx bx-trending-up icon' ></i>
+                    </div>
+                </a>
+            </div>
+        
+        </div> 
+    </div>
+
+   
+</main>-->
+
+
+

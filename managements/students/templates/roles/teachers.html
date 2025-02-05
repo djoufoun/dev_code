@@ -1,0 +1,102 @@
+{% extends 'basedashboard.html' %}
+
+{% block content %}
+<style>
+    a{
+        text-decoration: none;
+    }
+    .panel-card{
+        margin-bottom: 20px !important;
+        border-radius: 4px;
+        box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+        position: relative;
+        overflow: hidden;
+    }
+    .panel-card-header{
+        padding: 15px;
+        position: relative;
+        font-family: "Montserrat";
+    }
+    .row{
+        margin: 15px !important;
+    }
+    .huge{
+        font-size: 40px !important;
+        line-height: normal I !important;
+        font-weight: bold I !important;
+        font-family: "Popins" !important;
+    }
+    .panel-card-footer{
+        padding: 3px !important;
+    }
+    .panel-card-footer span{
+        padding: 5px ;
+        font-size: 15px;
+        line-height: 25px;
+        font-weight: medium im !important;
+        opacity: 1;
+    }
+    .panel-card-footer a{
+        color: white !important;
+    }
+    .bg-primary-2{
+        background: #00bae8 !important;
+    }
+    .bg-primary-dark{
+        background: rgba(0, 0, 0, 0.15)  !important;
+    }
+    .icon{
+        opacity: 0.3 !important;
+        font-size: 80px !important;
+        position: absolute !important;
+        right: -6px !important;
+        bottom: -45px !important;
+        transform: rotate(-15deg);
+        transform: all 0.3s ease-in-out !important;
+    }
+    .panel-card:hover .icon{
+        opacity: 0.5 !important;
+    }
+    .mt-0-7{
+        margin-top: 0.7rem;
+    }
+    .bg-primary-dark:hover{
+        background: rgba(0, 0, 0, 0.2);
+    }
+    .bouge{
+        transition: 0.3S ease-in-out;
+        
+    }
+    .bouge:hover{
+       transform: 0.3s all ease-in-out;
+       transform: translateY(10px);
+       cursor: pointer;
+    }
+</style>
+<div class="row m-auto">
+    <div class="col-lg-3 col-md-3 col-xs-4 col-sm-3 bouge">
+        <div class="panel-card bg-primary">
+            <div class="panel-card-header bg-primary-2 text-white">
+                <div class="row d-flex justify-content-center">
+                    <div class="col">
+                        <div class="huge">
+                            550
+                        </div>
+                        <div class="users">USERS</div>
+                    </div>
+                    <div class="col text-right mt-0-7">
+                        <i class="fas fa-user fa-4x text-white icon"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-card-footer bg-primary-dark cl-white text-center">
+                <a href="">
+                    <span>View details</span>
+                    <span><i class="fas fa-arrow-circle-right"></i> </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'elements/dashboard.html' %}
+
+{% block body %}
+<div class="container">
+    <div class="col-md-8 offset-md-2 mt-5">
+        <div class="card shadow-lg">
+           
+            <div class="card-body">
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                                            
+                    <h5>êtes vous sur de supprimer departement de  {{obj}}</h5>
+                 <center >
+                        <input type="submit" name="submit" value="envoyer" class="btn btn-md btn-success mt-2"> 
+                        <button type="button" class="btn  btn-secondary mt-2" data-bs-dismiss="modal"><a href="{% url 'students:departement' %}" class="text-white">Annuler</a></button>
+                    </center>                                      
+                </form>                               
+                         
+            </div>
+        </div>    
+    </div>
+</div>
+
+{% endblock %}

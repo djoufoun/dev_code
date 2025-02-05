@@ -1,0 +1,162 @@
+{% extends 'elements/dashboard.html' %}
+
+{% block body %}
+
+        <div class="container">
+            <div class="row gutters ">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="card">
+                        <div class="card-body p-0">
+                            <div class="invoice-container">
+                                <div class="invoice-header">
+            
+                                    <!-- Row start -->
+                                    <div class="row gutters">
+                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                            <div class=" mb-1">
+                                                <a href="{% url 'students:addmatiere' %}" class="btn btn-primary btn-md btn-block">
+                                                    <i class="icon-download"></i> Retour à la page d'acceuil des matieres
+                                                </a>
+            
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Row end -->
+            
+            
+                            </div>
+            
+                                <div class="invoice-body">
+            
+                                    <!-- Row start -->
+                                    <div class="row gutters">
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+
+                                            <div class="row gutters">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    
+                                                    <div class="invoice-details rounded-5">
+                                                    
+                                                        <address id="nom_tuteur">       
+                                                            <h3>  Le nom de la matière est: <i> {{matiere.nom_matiere}}</i> </h3>	
+                                                        </address>                                                                         
+                                                    </div>
+                                                                                            
+                                                </div>                                  
+                                            </div>	
+                                            
+                                            <br>
+
+                                            <div class="table-responsive">
+                                                <table class="table custom-table m-0" id="example">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>CHAMPS DE LA MATIERES</th>
+                                                            <th>VALEURS DES CHAMPS</th>                                                                                               
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>  
+                                                        <tr>                                                          
+                                                            <td>ID de la matiere </td>
+                                                            <td>{{matiere.id}}</td>
+                                                          </tr>                                                    
+                                                       <tr>                                                          
+                                                            <td>Nom de la matiere </td>
+                                                            <td>{{matiere.nom_matiere}}</td>
+                                                        </tr>   
+                                                        <tr>                                                          
+                                                            <td>Code de la matiere </td>
+                                                            <td>{{matiere.code_matiere}}</td>
+                                                         </tr>  
+                                                        <tr>                                                          
+                                                            <td>Nature d'unité d'enseignement  </td>
+                                                            <td>{{matiere.nature_ue}}</td>
+                                                        </tr> 
+                                                        <tr>                                                          
+                                                            <td>Code d'unité d'enseignement  </td>
+                                                            <td>{{matiere.code_ue}}</td>
+                                                        </tr> 
+                                                        <tr>                                                          
+                                                            <td>coefficient de la matiere </td>
+                                                            <td>{{matiere.coefficient_matiere}}</td>
+                                                         </tr>   
+                                                        <tr>                                                          
+                                                            <td>Volume horaire de la matière  </td>
+                                                            <td>{{matiere.horaire}}</td>
+                                                        </tr>  
+                                                        <tr>                                                          
+                                                            <td>Filiere de la matière </td>
+                                                            <td>{{matiere.filMatiere.nom_filiere}}</td>
+                                                                                                               
+                                                        </tr>  
+                                                        <tr>                                                          
+                                                            <td>Niveau de la matière </td>
+                                                            <td>{{matiere.niveau}}</td>
+                                                        </tr>   
+                                                        <tr>                                                          
+                                                            <td>Semestre de la matière </td>
+                                                            <td>{{matiere.semestre}}</td>
+                                                          </tr>     
+                                                        <tr>                                                          
+                                                            <td>Specialite de la matière</td>
+                                                            <td>{{matiere.specialite.nom_specialite}}</td>
+                                                         </tr>                                                                                                                                                                                                                                                                                                  			                                                                                 
+                                                    </tbody>
+                                                </table>
+                                               
+                                            </div>
+
+                                            <br><br>
+                                            <div class="table-responsive">
+                                                <table class="table custom-table m-0" id="example">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>LISTE DE TOUT LES MATIERES</th>
+                                                            <th>Ajouter des notes</th>
+                                                            <th>Modifier</th>
+                                                            <th>Supprimer</th>
+                                                            <th>Voir</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    
+                                                        {% for liste in liste_matiere %}
+                                                            <tr>
+                                                            
+                                                                <td>
+                                                                    {{ liste}} 
+                                                                </td>
+                                                                <td class="text-center"><a class="btn btn-sm btn-primary" href="{% url 'students:updatematiere' liste.id %}"><i class="fa fa-plus-square"></a></td>
+                                                               
+                                                                <td class="text-center"><a class="btn btn-sm btn-success" href="{% url 'students:updatematiere' liste.id %}"><i class="fa fa-edit"></a></td>
+                                                                <td class="text-center"><a class="btn btn-sm btn-danger" href="{% url 'students:deletematiere' liste.id %}"><i class="fa fa-trash"></a></td>
+                                                                <td class="text-center"><a class="btn btn-sm btn-warning" href="{% url 'students:show_matiere' liste.id %}"><i class="fa fa-eye"></a></td>
+                                                                
+                                                                   
+                                                            </tr>                                                                                                                                                     
+                                                        {% endfor %}                                           
+                                                                                                                                                                                                                          			                                                                                 
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <br>
+                                           
+                                        </div>
+                                    </div>
+                                    <!-- Row end -->
+            
+                                </div>
+
+                               
+                                <div class="invoice-footer">
+                                    Merci pour l'achat .
+                                </div>
+            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock body %}
