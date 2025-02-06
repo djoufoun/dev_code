@@ -1,0 +1,204 @@
+{% extends 'elements/dashboard.html' %}
+
+{% block body %}
+
+<style type="text/css">
+	.profile-pic{
+		height: 100%;
+		width:100%;
+		margin: 0 auto;
+		border-radius: 50%;
+	}
+    @media  screen and (max-width < 600px){
+        .profile-pic{
+            width: 150px;
+            height: 150px;
+            flex-basis: 100%;
+            display: flex;
+        }
+    }
+        
+
+	
+	h1{
+		font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+		font-variant: normal;
+		font-style: italic;
+	}
+    .table-ul{
+        font-size: 17px;
+    }
+</style>
+
+        <div class="container">
+            <div class="row gutters ">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="card shadow-lg">
+                        <div class="card-body p-0 ">
+                            <div class="invoice-container">
+                                <div class="invoice-header">
+            
+            
+                                  
+                                    <div class="row">
+                                        <div class="card card-header text-center">
+                                            <h3>Voici les informations sur le tuteur</h3>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    	<!-- Row start -->
+                                    <div class="row gutters bg-gradient">
+                                        <div class="row col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            
+                                            <div class="col-md-6 ">
+                                                <div class="card card-body shadow-lg">
+                                                    
+                                                    <a class="btn btn-warning" href="{% url 'students:tuteur' %}">&#8592; Retour à la page des tuteurs</a>
+                                                    <hr>
+                                                    <h4 style="text-align: center;">Voici le tuteur  {{tuteur.nom}} {{tuteur.prenom}}</h4>
+                                                    <hr>
+                                                    <img class="profile-pic bg-black" src="{{tuteur.photo.url}}">
+                                                    <br><br>
+                                                   
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 ">
+                                                <div class="card card-body shadow-lg">
+                                                    
+                                                    <a class="btn btn-warning" href="{% url 'students:tuteur' %}">&#8592; Retour à la page des tuteurs</a>
+                                                    <hr>
+                                                  
+                                                    <h4 style="text-align: center;">Voici la photo de l'étudiant {{student.nom}} {{student.prenom}}</h4>
+                                                    
+                                                    <hr>
+                                                    <img class="profile-pic bg-black" src="{{tuteur.photo.url}}">
+                                                    <br><br>                                                  
+                                                </div>
+                                            </div>
+                                            <br>                                                                                                                                                                                      
+                                        </div> 
+                                        
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="card card-body shadow-lg">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-ul m-0 table-hover  text-capitalize  shadow-lg " >
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Nom </th>
+                                                                    <th>Prenom</th>
+                                                                    <th>Telephone</th>
+                                                                    <th>Email</th>
+                                                                    <th>Adresse </th>
+                                                                    <th>Adresse physique</th>
+                                                                    <th>Sexe</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            
+                                                       
+                                                                <tr>
+                                                                    <td>{{tuteur.nom}}</td>
+                                                                    <td>{{tuteur.prenom}}</td>
+                                                                    <td>
+                                                                        {{ tuteur.telephone }} 
+                                                                    </td>
+                
+                                                                    <td>
+                                                                        {{ tuteur.email}}
+                                                                        
+                                                                    </td>
+                
+                                                                    <td>
+                                                                        {{ tuteur.adresse }}
+                                                                        
+                                                                    </td>
+                
+                                                                    <td>
+                                                                        {{ tuteur.adresse_physique}}
+                                                                        
+                                                                    </td>
+                
+                                                                    <td>
+                                                                        {{ tuteur.sexe }}
+                                                                        
+                                                                    </td>
+                
+                                                                    
+                                                                    
+                                                                </tr>
+                                                              
+                                                                
+                                                                
+                                                            
+                                                            </tbody>
+                                                        </table>
+                                                       
+                                                    </div>
+                                                </div>
+                                          
+                                            
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="card card-body shadow-lg">
+                                                    <div class="table-responsive">
+                                                        <table class="table custom-table m-0 table-bordered table-sm  table-condensed   text-capitalize  shadow-lg display nowrap" id="example2">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Liste des tuteurs</th>
+                                                                    <th>Ajouter un tuteur</th>
+                                                                    <th>Modifier</th>
+                                                                    <th>Supprimer</th>
+                                                                    <th>Voir</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            
+                                                                {% for liste in all_tuteur %}
+                                                                    <tr>
+                                                                    
+                                                                        <td>
+                                                                            {{ liste}} 
+                                                                        </td>
+                                                                        <td class="text-center"><a class="btn btn-sm btn-primary" href="{% url 'students:tuteur' %}"><i class="fa fa-plus-square"></a></td>
+                                                                       
+                                                                        <td class="text-center"><a class="btn btn-sm btn-success" href="{% url 'students:tuteur_update' liste.id %}"><i class="fa fa-edit"></a></td>
+                                                                        <td class="text-center"><a class="btn btn-sm btn-danger" href="{% url 'students:tuteur_delete' liste.id %}"><i class="fa fa-trash"></a></td>
+                                                                        <td class="text-center"><a class="btn btn-sm btn-warning" href="{% url 'students:view_tuteur' liste.id %}"><i class="fa fa-eye"></a></td>
+                                                                        
+                                                                           
+                                                                    </tr>                                                                                                                                                     
+                                                                {% endfor %}                                           
+                                                                                                                                                                                                                                                                                                                               
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                       
+                                                <br>
+                       
+                                            </div>
+                                        </div>
+                                    </div>		
+    				            </div>
+    						<!-- Row end -->
+            
+                            </div>
+            
+                            
+                            
+
+                                
+                                
+                        </div>
+                </div>
+            </div>
+        </div>
+
+
+
+{% endblock body %}

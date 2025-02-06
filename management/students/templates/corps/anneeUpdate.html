@@ -1,0 +1,26 @@
+{% extends 'elements/dashboard.html' %}
+
+{% block body %}
+<div class="container">
+    <div class="col-md-5 offset-md-3 mt-4">
+        <div class="card shadow-lg">
+            <div class="card-header " >          
+                <h4 class="text-center">Modifier une année universitaire</h4>
+            </div>
+            <div class="card-body">
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                                            
+                    {{form.as_p}}
+                 <center >
+                        <input type="submit" name="submit" value="Enregistrer" class="btn btn-md btn-success mt-2"> 
+                        <button type="button" class="btn  btn-secondary mt-2" data-bs-dismiss="modal"><a href="{% url 'students:anneescolaire' %}" class="text-white">Annuler</a></button>
+                    </center>                                      
+                </form>                               
+                         
+            </div>
+        </div>    
+    </div>
+</div>
+
+{% endblock %}

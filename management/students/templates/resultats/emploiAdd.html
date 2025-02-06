@@ -1,0 +1,76 @@
+{% extends 'elements/dashboard.html' %}
+
+
+{% block body %}
+
+
+<div class="container">
+    <div class="row col-md-12">
+        <div class="card">
+            <div class="card-header shadow-lg text-center">
+                <h3>PROGRAMMER VOTRE EMPLOIS DU TEMPS ICI</h3>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5  mt-4 jumbotron">
+            <div class="card shadow-lg">
+                <div class="card-header " >          
+                    <h4 class="text-center">Ajouter Un emplois du temps</h4>
+                </div>
+                <div class="card-body">
+                    <form action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                                                
+                        {{form.as_p}}
+                     <center >
+                            <input type="submit" name="submit" value="Enregistrer" class="btn btn-md btn-success mt-2"> 
+                            <button type="button" class="btn  btn-secondary mt-2" data-bs-dismiss="modal"><a href="{% url 'students:pageaccueil' %}" class="text-white">Annuler</a></button>
+                        </center>                                      
+                    </form>                               
+                             
+                </div>
+            </div>    
+        </div>
+      
+        <div class="col-md-7">
+            <br>
+            <div class="card card-body shadow-lg">
+                <div class="table-responsive ">
+                    <table class="table  bg-white table-ul m-0" id="examp">
+                        <thead>
+                            <tr>
+                                <th>type d'empolis</th>
+                                <th>filiere </th>
+                                <th>matière</th>
+                                <th>semetre</th>
+                                <th>Enseignant</th>
+                                <th>Modifier</th>
+                                <th>Supprimer</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        
+                            {% for liste in emplois %}
+                                <tr>
+                                    <td>{{ liste.type_emplois}} </td>
+                                   
+                                    <td>{{ liste.status }} </td>                              
+                                    <td>{{liste.enseignant.matiere}}</td>
+                                    <td>{{liste.enseignant.semestre}}</td>
+                                    <td>{{liste.enseignant}}</td>
+                                    <td class="text-center"><a class="btn btn-sm btn-success" href="{% url 'students:update_emplois' liste.id %}"><i class="fa fa-edit"></a></td>
+                                    <td class="text-center"><a class="btn btn-sm btn-danger" href="{% url 'students:delete_emplois' liste.id %}"><i class="fa fa-trash"></a></td>
+                                </tr>                                                                                                                                                     
+                            {% endfor %}                                           
+                                                                                                                                                                                                                                                                                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+		
+
+{% endblock %}

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>generer</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+   <style>
+        .home{
+            border: 1px solid #000;
+            width: 250px;
+            height: 300px;
+        }
+
+        span{
+            font-size: 20px;
+            font-weight: 600;
+            width: 100%;
+            margin-top: 15px;
+        }
+       
+        .help{
+            position: relative;
+            font-size: 15px;
+            font-weight: 600;
+            width: 180px;
+            padding: 0;
+            margin: 0;
+            
+            
+        }
+       
+        .help0{
+            padding-left: 12px;
+          
+        }
+        .help1{
+            padding: 0;
+            width: 80px;
+        }
+        .help1 img{
+            position: absolute;
+            top: 0;
+
+        }
+        .help2{
+            padding: 8px;
+            width: 250px;
+        }
+        .help2 p{
+            padding: 0;
+            margin: 0;
+            border: 1px solid #000;
+        }
+        
+        .avenir{
+            background-color: blueviolet;
+            color:  whitesmoke;
+            padding-left: 5px;
+            width: 250px;
+        }
+
+        .verso{
+            border: 1px solid #000;
+        }
+        .verso .faul{
+            width: 350px;
+        }
+    </style>
+      
+    
+</head>
+<body>
+
+<div >
+    <table>
+        <thead>
+            <tr>
+                <th><img src="static/images/logo.png" alt="" width="180" height="20"></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+    </table>
+    <table>
+        <tr >
+        <td ></td>
+            <td class="help"> CARTE D'ETUDIANT</td>
+            <td></td> 
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td class="help0"> Antenne d'Amdjarass</td>
+            <td></td>  
+        </tr>
+    </table>
+    <table >
+        <tbody>
+            <tr>
+                <td class="help1"><img class="profil" src="{{table.photo.path }}" style="width: 150px; height: 200px;"></td>
+
+                <td class="help2">
+                    <p> ID: AMDJ{{table.id}} | Anneé académique: {{table.anneeScolaire}} </p>
+                    <p>Nom: {{table.nom}}</p> 
+                    <p> Prenom: {{table.prenom}}</p> 
+                    <p> Licence: {{table.niveau}}</p>
+                    <p>Lieu de naissance: {{table.adresse}}</p>
+                    <p>Date de naissance: {{table.date_naissance}}</p>
+                    <p>Telephone: {{table.telephone}}</p>
+                    <p>Adresse Physique: {{table.adresse}}</p>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td ><img class="profil" src="{{table.photo.path }}" style="width: 150px; height: 12px;"></td>
+                
+                <td class="avenir"> ENASTIC-"Votre avenir commence ici !"</td>
+            </tr>
+        </tbody> 
+    </table>
+</div>
+</div>  
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="verso">
+    <table>
+        <tr>
+            <td> Date d'émision: le 26.03.2023</td>
+           
+        </tr>
+        <tr>
+            <td> Date d'éxpiration: le 26.04.2024</td>
+            
+           
+        </tr>
+        <tr>
+            <td> Adresse Physique: Sabangali, BP:5363-N'Djamena, Tel:22521666</td>
+            
+            
+        </tr>
+        <tr>
+        <td>
+            <center>
+                <h2>LE DIRECTEUR DES ETUDES</h2>
+            </center>
+           </td>
+           
+        </tr>
+        <tr>
+           
+            <td>
+                <center>
+                    <img class="profil" src="static/images/loop.png" style="width: 20px; height: 20px; border-radius: 50%; margin: 15px;">
+               
+                    <img class="profil" src="static/images/loop.png" style="width: 50px; height: 50px; border-radius: 50%;">
+                </center>
+                
+            </td>  
+             
+        </tr>
+        <tr>
+            <td>
+                <center>
+                    <h2 style="text-decoration: underline;">Dr MAHAMAT CHARFADINE NIMANE</h2>
+                </center>
+               </td>
+
+              
+            </tr>
+          <tr>  
+            <td>  <hr></td> 
+           
+           </tr>
+          
+          <tr>
+            <td class="faul">1.Cette carte délivrée exclusivement par la direction Géneral de l'ENASTIC est reconnu comme piece justificative d'identité.</td>
+           
+          </tr>
+          <tr>
+            <td class="faul">2.Les autorisations civiles et les militaires sont priées de faciliter la circulation au detente la presente carte pendant la periode d'études.</td>
+          </tr>
+    </table>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+{% extends 'elements/dashboard.html' %}
+
+
+{% block body %}
+
+
+<div class="container bg-white shadow-lg">
+    <div class="row col-md-12">
+        <div class="card">
+            <div class="card-header shadow-lg text-center">
+                <h3>Liste des années universitaires</h3>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5  mt-4 jumbotron">
+            <div class="card shadow-lg">
+                <div class="card-header " >          
+                    <h4 class="text-center">Ajouter une année universitaire</h4>
+                </div>
+                <div class="card-body">
+                    <form action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                                                
+                        {{form.as_p}}
+                     <center >
+                            <input type="submit" name="submit" value="Enregistrer" class="btn btn-md btn-success mt-2"> 
+                            <button type="button" class="btn  btn-secondary mt-2" data-bs-dismiss="modal"><a href="{% url 'students:pageaccueil' %}" class="text-white">Annuler</a></button>
+                        </center>                                      
+                    </form>                               
+                             
+                </div>
+            </div>    
+        </div>
+      
+        <div class="col-md-7">
+            <br>
+            <div class="card card-body shadow-lg">
+                <div class="table-responsive ">
+                    <table class="table  bg-white table-ul m-0" id="example">
+                        <thead>
+                            <tr>
+                                <th>Année universitaire</th>
+                                <th>Année du début </th>
+                                <th>Année du fin</th>
+                                <th>Modifier</th>
+                                <th>Supprimer</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        
+                            {% for liste in view_annee %}
+                                <tr>
+                                    <td>{{ liste.anneescolaire}} </td>
+                                    <td>{{ liste.annee_debut}} </td>
+                                    <td>{{liste.annee_fin}}</td>
+                                    <td class="text-center"><a class="btn btn-sm btn-success" href="{% url 'students:annee_update' liste.id %}"><i class="fa fa-edit"></a></td>
+                                    <td class="text-center"><a class="btn btn-sm btn-danger" href="{% url 'students:annee_delete' liste.id %}"><i class="fa fa-trash"></a></td>
+                                </tr>                                                                                                                                                     
+                            {% endfor %}                                           
+                                                                                                                                                                                                                                                                                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+		
+
+{% endblock %}
+
