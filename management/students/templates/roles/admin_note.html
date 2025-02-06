@@ -1,0 +1,40 @@
+{% extends 'elements/dashboard.html' %}
+
+{% block body %}
+
+
+
+
+<div class="col-md-12">
+    <br>
+    <div class="card card-body shadow-lg">
+        <div class="table-responsive ">
+            <table class="table  bg-white table-ul m-0" id="example">
+                <thead>
+                    <tr>
+                        <th>Étudiants </th>
+                        <th>Matière</th>    
+                        <th>Type d'évaluation</th>    
+                        <th>Notes</th> 
+                                                                                                          
+                    </tr>
+                </thead>
+                <tbody>
+                
+                    {% for note in notes %} 
+                        <tr>                                                          
+                            <td>{{note.etudiant}} </td>
+                            <td>{{note.matiere}}</td>
+                            <td>{{note.type_note}}</td>
+                            <td>{{note.note}}</td>
+                        
+                        </tr>                                           
+                    {% endfor %}                                                                                                                                                                                                                                                             
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'elements/dashboard.html' %}
+
+{% block body %}
+
+<div class="container">
+    <div class="  mt-5 ">
+        <div class="card shadow-lg">
+            <form action="" method="post">
+                {% csrf_token %}
+                
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Etudiant/Matières</th>
+                            {% for matiere in matieres %}
+                          
+                                <th>{{ matiere.nom_matiere  }} </th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for etudiant in etudiants %}
+                            <tr>
+                                <td>{{ etudiant.nom }}   </td>
+                                <td>{{ etudiant.prenom }}</td>
+                                {% for matiere in matieres %}
+                                <td>
+                                    <input type="number" name="etudiant_{{etudiant.id}}_matiere_{{matiere.id}}">
+                                </td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                
+                <button type="submit">Enregistrer</button>
+            </form>
+        </div>
+    </div>
+</div>
+    {% endblock %}
+
